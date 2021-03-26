@@ -87,6 +87,11 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Class\ShoppingCart.cs" />
+    <Compile Include="Class\Customer.cs" />
+    <Compile Include="Class\Order.cs" />
+    <Compile Include="Class\Pizza.cs" />
+    <Compile Include="Class\PizzaTopping.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
