@@ -13,5 +13,12 @@ namespace PizzariaWebsite
         {
 
         }
+
+        protected void AddToCart_Click(object sender, EventArgs e)
+        {
+            int rowIndex = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
+            Session["pizzaId"] = rowIndex;
+            SessionManager.AddSession(Session["pizzaId"].ToString());
+        }
     }
 }

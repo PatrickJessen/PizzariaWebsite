@@ -11,6 +11,6 @@ namespace PizzariaWebsite
         public int Onion { get; set; }
         public int MeatSauce { get; set; }
         public int Chilli { get; set; }
-        public decimal Price { get; set; }
+        public decimal Price { get; } = 10;
     }
 }

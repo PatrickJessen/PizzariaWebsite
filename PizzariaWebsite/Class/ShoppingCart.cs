@@ -7,14 +7,12 @@ namespace PizzariaWebsite
 {
     public class ShoppingCart
     {
-        public string Description { get; set; }
-        public int Quantity { get; set; }
+        public string Name { get; set; }
         public decimal Price { get; set; }
 
-        public ShoppingCart(string description, int quantity, decimal price)
+        public ShoppingCart(string name, decimal price)
         {
-            Description = description;
-            Quantity = quantity;
+            Name = name;
             Price = price;
         }
     }
