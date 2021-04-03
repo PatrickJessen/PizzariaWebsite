@@ -45,7 +45,7 @@
         </nav>
         <div class="menucontainer" id="menu">
             <h1 class="MenuTitle">Menu</h1>
-            <div class="content">
+            <div class="Menucontent">
                 <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="PizzaID" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="PizzaID" HeaderText="Nr." ReadOnly="True" InsertVisible="False" SortExpression="PizzaID"></asp:BoundField>
@@ -59,6 +59,19 @@
                     </Columns>
                 </asp:GridView>
                 <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:PizzaDBConnectionString %>' SelectCommand="SELECT [PizzaID], [Name], [Price] FROM [Pizza]"></asp:SqlDataSource>
+            </div>
+            <div class="toppingcontent">
+                <asp:GridView ID="ToppingGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="TopID" DataSourceID="SqlDataSource2">
+                    <Columns>
+                        <asp:BoundField DataField="TopID" HeaderText="TopID" ReadOnly="True" InsertVisible="False" SortExpression="TopID"></asp:BoundField>
+                        <asp:BoundField DataField="Cheese" HeaderText="Cheese" SortExpression="Cheese"></asp:BoundField>
+                        <asp:BoundField DataField="Onion" HeaderText="Onion" SortExpression="Onion"></asp:BoundField>
+                        <asp:BoundField DataField="Meatsauce" HeaderText="Meatsauce" SortExpression="Meatsauce"></asp:BoundField>
+                        <asp:BoundField DataField="Chilli" HeaderText="Chilli" SortExpression="Chilli"></asp:BoundField>
+                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:PizzaDBConnectionString %>' SelectCommand="SELECT * FROM [Toppings]"></asp:SqlDataSource>
             </div>
         </div>
     </form>
