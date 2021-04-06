@@ -46,24 +46,21 @@
         <div class="menucontainer" id="menu">
             <h1 class="MenuTitle">Menu</h1>
             <div class="Menucontent">
-                <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="PizzaID" DataSourceID="SqlDataSource1">
+                <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="PizzaID" DataSourceID="SqlDataSource1" Height="403px" Width="776px">
                     <Columns>
                         <asp:BoundField DataField="PizzaID" HeaderText="Nr." ReadOnly="True" InsertVisible="False" SortExpression="PizzaID"></asp:BoundField>
                         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"></asp:BoundField>
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button ID="AddToCart" Text="AddToCart" runat="server" OnClick="AddToCart_Click"/>
+                                <asp:Button ID="AddToCart" Text="AddToCart" runat="server" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:PizzaDBConnectionString %>' SelectCommand="SELECT [PizzaID], [Name], [Price] FROM [Pizza]"></asp:SqlDataSource>
-            </div>
-            <div class="toppingcontent">
                 <asp:GridView ID="ToppingGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="TopID" DataSourceID="SqlDataSource2">
                     <Columns>
-                        <asp:BoundField DataField="TopID" HeaderText="TopID" ReadOnly="True" InsertVisible="False" SortExpression="TopID"></asp:BoundField>
+                        <asp:BoundField DataField="TopID" HeaderText="TopID" ReadOnly="True" InsertVisible="false" SortExpression="TopID" Visible="false"></asp:BoundField>
                         <asp:BoundField DataField="Cheese" HeaderText="Cheese" SortExpression="Cheese"></asp:BoundField>
                         <asp:BoundField DataField="Onion" HeaderText="Onion" SortExpression="Onion"></asp:BoundField>
                         <asp:BoundField DataField="Meatsauce" HeaderText="Meatsauce" SortExpression="Meatsauce"></asp:BoundField>
@@ -71,6 +68,7 @@
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:PizzaDBConnectionString %>' SelectCommand="SELECT [PizzaID], [Name], [Price] FROM [Pizza]"></asp:SqlDataSource>
                 <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:PizzaDBConnectionString %>' SelectCommand="SELECT * FROM [Toppings]"></asp:SqlDataSource>
             </div>
         </div>

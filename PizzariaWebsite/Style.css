@@ -36,21 +36,23 @@
     background-color: wheat;
     color: gray;
 }
-.Menucontent
-{
-    text-align: center;
-    width: 33%;
-    height: 100%,
+#MenuGrid {
+    background-color: white;
+    margin-left: 0px;
+    margin-top: 0px;
 }
-.toppingcontent{
 
-    background-color: red;
-    float:right;
-    height: 500px;0%,
+#ToppingGrid {
+    background-color: white;
+    float: right;
+    position: relative;
+    top: -397px;
+    left: -388px;
+    width: 371px;
+    height: 321px;
 }
-.toppingcontent{
 
-    background-color: red;
-    float:right;
-    height: 500px;
+.Menucontent {
+    height: 611px;
+    width: 1538px;
 }
