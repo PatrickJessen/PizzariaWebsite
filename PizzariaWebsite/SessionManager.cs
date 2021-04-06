@@ -30,30 +30,6 @@ namespace PizzariaWebsite
             }
         }
 
-        public static string GetAllPizzaId(int sessionId)
-        {
-            string temp = "";
-            for (int i = 0; i < sesList.Count; i++)
-            {
-                //if (sesList[i].Contains(sessionId))
-                //{
-                //    temp += sessionId;
-                //}
-            }
-
-            return temp;
-        }
-
-        public static string GetAllSessionId()
-        {
-            string temp = "";
-            for (int i = 0; i < sesList.Count; i++)
-            {
-                temp += sesList[i];
-            }
-            return temp;
-        }
-
         public static int FindSessionId(int sessionId)
         {
             for (int i = 0; i < sesList.Count; i++)
