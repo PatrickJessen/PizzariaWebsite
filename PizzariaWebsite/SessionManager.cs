@@ -7,7 +7,7 @@ namespace PizzariaWebsite
 {
     public static class SessionManager
     {
-        public static List<int> sesList = new List<int>();
+        private static List<int> sesList = new List<int>();
         public static int SessionId { get; set; }
         public static void AddSession(int sessionId)
         {
