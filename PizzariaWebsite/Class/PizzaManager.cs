@@ -7,25 +7,33 @@ namespace PizzariaWebsite
 {
     public class PizzaManager
     {
+        List<Pizza> pizzaList;
         DalManager manager = new DalManager();
-        public string GetPizzaName(int id)
+        public PizzaManager()
         {
-            string temp = "";
-            for (int i = 0; i < manager.GetPizzaData(id).Count; i++)
-            {
-                temp += manager.GetPizzaData(id)[i].Name;
-            }
-            return temp;
+            pizzaList = manager.GetPizzaData();
         }
 
-        public string GetPizzaID(int id)
+        public string GetPizzaName(int id)
         {
-            string temp = "";
-            for (int i = 0; i < manager.GetPizzaData(id).Count; i++)
+            return manager.GetPizzaName(id);
+        }
+
+        public List<Pizza> GetAllPizza()
+        {
+            return pizzaList;
+        }
+
+        public Pizza GetPizza(int id)
+        {
+            for (int i = 0; i < pizzaList.Count; i++)
             {
-                temp += manager.GetPizzaData(id)[i].Id;
+                if (i == id)
+                {
+                    return pizzaList[i];
+                }
             }
-            return temp;
+            return null;
         }
     }
 }

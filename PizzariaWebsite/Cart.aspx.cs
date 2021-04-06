@@ -10,22 +10,25 @@ namespace PizzariaWebsite
 {
     public partial class Cart : System.Web.UI.Page
     {
+        PizzaManager manager = new PizzaManager();
+        decimal total = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session[SessionManager.GetAllPizzaId("PizzaId")] != null)
+            DataTable dt = new DataTable();
+            DataRow row;
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Price");
+            for (int i = 0; i < SessionManager.GetList().Count; i++)
             {
-                DataTable dt = new DataTable();
-                DataRow row;
-                dt.Columns.Add("Name");
-                foreach (string key in Session.Keys)
-                {
-                    row = dt.NewRow();
-                    //row["Name"] = manager.GetPizzaName((int)Session[key]);
-                    dt.Rows.Add(row);
-                }
-                grid.DataSource = dt;
-                grid.DataBind();
+                row = dt.NewRow();
+                row["Name"] = manager.GetPizza(SessionManager.GetList()[i]).Name;
+                row["Price"] = manager.GetPizza(SessionManager.GetList()[i]).Price;
+                dt.Rows.Add(row);
+                total += manager.GetPizza(SessionManager.GetList()[i]).Price;
             }
+            grid.DataSource = dt;
+            grid.DataBind();
+            totalPrice.Text = $"Total: {total}";
         }
 
         protected void grid_RowDeleting(object sender, GridViewDeleteEventArgs e)

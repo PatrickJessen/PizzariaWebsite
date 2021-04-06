@@ -58,6 +58,7 @@
         </div>
         <asp:Button runat="server" ID="chkBtn" Text="Checkout" class="btn btn-info btn-md" OnClick="chkBtn_Click"/>
       </section>
+      <asp:Label ID="totalPrice" runat="server"></asp:Label>
   </form>
 </body>
 </html>

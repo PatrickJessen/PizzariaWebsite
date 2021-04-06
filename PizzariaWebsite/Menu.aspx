@@ -53,7 +53,7 @@
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button ID="AddToCart" Text="AddToCart" runat="server" />
+                                <asp:Button ID="AddToCart" Text="AddToCart" runat="server" OnClick="AddToCart_Click"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
