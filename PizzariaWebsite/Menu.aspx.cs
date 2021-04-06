@@ -20,5 +20,10 @@ namespace PizzariaWebsite
             Session["pizzaId" + SessionManager.SessionId] = SessionManager.SessionId;
             SessionManager.AddSession((int)Session["pizzaId" + SessionManager.SessionId]);
         }
+
+        protected void AddToCart_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
