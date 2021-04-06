@@ -43,6 +43,10 @@
           </div>
         </div>
       </nav>
+        <div class="MainPageContent">
+            <h3>Velkommen til Pizzariet</h3>
+            <p>Her hos os går vi rigtig meget op i italiensk mad og kvalitet, Vi servere italienske råvare med fantastisk smag. Du kan se vores store udvalg af Pizzaer ved at klikke <a class="MainPageBtn" href="Menu.aspx">Her          </a>  <strong>OBS!!! husk at logge ind før bestilling</strong> </p>
+        </div>
   </form>
 </body>
 </html>

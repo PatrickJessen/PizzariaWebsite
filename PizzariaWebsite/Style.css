@@ -36,6 +36,7 @@
     background-color: wheat;
     color: gray;
 }
+
 #MenuGrid {
     background-color: white;
     margin-left: 0px;
@@ -55,4 +56,49 @@
 .Menucontent {
     height: 611px;
     width: 1538px;
+}
+
+#delBtn {
+    text-decoration: none !important;
+    border-radius: 30px;
+    color: #fff !important;
+    background: #107afd;
+    font-weight: 600;
+}
+
+#grid {
+    background-color: white;
+}
+
+#chkBtn {
+    text-decoration: none !important;
+    color: #fff !important;
+    background: #107afd;
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(33, 37, 41);
+}
+
+.MainPageContent {
+    background-color:burlywood;
+    border-radius: 20px;
+    height:105%;
+    width: 50%;
+    color: black;
+    position:relative;
+    top: 201px;
+    left: 3px;
+}
+.MainPageContent h3{
+    text-align:center;
+}
+.MainPageBtn {
+    text-decoration: none !important;
+    color: #fff !important;
+    font-weight: 600;
 }
