@@ -26,18 +26,23 @@
         line-height: 25px;
     }
 
-.MainPageBtn a {
-    text-decoration: none;
-    width: 100px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
+.button {
+    font: bold 11px Arial;
+    text-decoration: none !important;
+    background-color: #009688;
     color: #fff;
-    cursor: pointer;
+    padding: 6px 18px 6px 18px;
+    border-top: 10px solid #009688;
+    border-right: 10px solid #009688;
+    border-bottom: 10px solid #009688;
+    border-left: 10px solid #009688;
+    border-radius: 10px;
+}
+.button:hover
+{
+    color:#fff;
+    text-decoration:none;
+   
 }
 
 .navbar {
@@ -47,6 +52,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.logo{
+    width: 240px;
+    cursor: pointer;
 }
 
     .navbar ul li {

@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\AvatarLogin.png" />
+    <Content Include="assets\logo.png" />
     <Content Include="assets\pizzafront.png" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />

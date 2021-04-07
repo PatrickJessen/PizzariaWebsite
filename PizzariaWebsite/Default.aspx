@@ -13,6 +13,7 @@
 <body>
     <form id="form1" runat="server"> 
         <div class="navbar">
+            <img src="assets/logo.png"  class="logo"/>
             <ul>
                 <li><a href="Default.aspx">Home</a></li>
                 <li><a href="Menu.aspx">Menu</a></li>
@@ -25,9 +26,9 @@
         <div class="MainPageContent">
             <h1>Velkommen til Pizzariet</h1>
             <p>Her hos os går vi rigtig meget op i italiensk mad og kvalitet, Vi servere italienske råvare med fantastisk smag. Du kan se vores store udvalg af pizzaer ved at klikke på Menu knappen, du kan også læs mere omkring os ved at klikke på Læs mere knappen<br /><strong>OBS!!! husk at logge ind før bestilling</strong> </p>
-            <div class="MainPageBtn">
-                <a href="Menu.aspx">Menuen</a>
-                <a href="Contact.aspx">Læs Mere</a>
+            <div>
+                <a href="Menu.aspx" class="button">Menuen</a>
+                <a href="Contact.aspx" class="button">Læs Mere</a>
             </div>
         </div>
   </form>
