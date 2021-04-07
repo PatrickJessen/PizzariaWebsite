@@ -44,23 +44,23 @@
         </div>
       </nav>
       <div class="container">
-        <fieldset class="LoginFieldset">
+        <fieldset class="grid">
           <legend>Login</legend>
           <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input id="username" runat="server" type="text" placeholder="Enter Username" name="uname" required>
 
             <p></p>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input id="password" runat="server" type="password" placeholder="Enter Password" name="psw" required>
 
             <p></p>
 
             <asp:Button type="button" ID="LoginButton" Text="Login" OnClick="LoginButton_Click"/>
 
             <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
+              <input type="checkbox" checked="checked" name="remember"> Remember
             </label>
 
             <p></p>
@@ -69,7 +69,7 @@
           </div>
         </fieldset>
         <div>
-          <img src="assets/AvatarLogin.png" style="position:fixed; right: 1150px; bottom:525px; width:300px; height:300px; border:none"> 
+          <img src="assets/AvatarLogin.png" style="position:fixed; right: 60%; bottom:60%; width:200px; height:200px; border:none"> 
         </div>
       </div>
   </form>

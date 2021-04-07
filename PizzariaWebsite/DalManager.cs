@@ -58,5 +58,47 @@ namespace PizzariaWebsite
                 return decimal.Parse(dt.Rows[0]["Price"].ToString());
             }
         }
+
+        public string IsUsernameValid(string username)
+        {
+            try
+            {
+                string query = $"SELECT * FROM login WHERE Username = '{username}'";
+                using (SqlConnection conn = new SqlConnection(conString))
+                {
+                    conn.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+                    DataTable dtbl = new DataTable();
+                    sda.Fill(dtbl);
+
+                    return dtbl.Rows[0]["username"].ToString();
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public string IsPasswordValid(string password)
+        {
+            try
+            {
+                string query = $"SELECT * FROM login WHERE Password = '{password}'";
+                using (SqlConnection conn = new SqlConnection(conString))
+                {
+                    conn.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+                    DataTable dtbl = new DataTable();
+                    sda.Fill(dtbl);
+
+                    return dtbl.Rows[0]["password"].ToString();
+                }
+            }
+            catch
+            {
+                return "";
+            }
+        }
     }
 }
