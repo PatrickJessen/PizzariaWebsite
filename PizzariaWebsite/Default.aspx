@@ -12,40 +12,23 @@
 </head>
 <body>
     <form id="form1" runat="server"> 
-      <div>
-          <fieldset class="TopHeader">
-              <h1>Pizzaria</h1>
-          </fieldset>
-      </div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Default.aspx"><b>Home</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Menu.aspx"><b>Menu</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="MyPage.Aspx"><b>My Page</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Cart.Aspx"><b>Cart</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Login.Aspx"><b>Login</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Contact.Aspx"><b>Contact</b></a>
-              </li>
+        <div class="navbar">
+            <ul>
+                <li><a href="Default.aspx">Home</a></li>
+                <li><a href="Menu.aspx">Menu</a></li>
+                <li><a href="MyPage.Aspx">My Page</a></li>
+                <li><a href="Cart.Aspx">Cart</a></li>
+                <li><a href="Login.Aspx">Login</a></li>
+                <li><a href="Contact.Aspx">Contact</a></li>
             </ul>
-          </div>
         </div>
-      </nav>
         <div class="MainPageContent">
-            <h3>Velkommen til Pizzariet</h3>
-            <p>Her hos os går vi rigtig meget op i italiensk mad og kvalitet, Vi servere italienske råvare med fantastisk smag. Du kan se vores store udvalg af Pizzaer ved at klikke <a class="MainPageBtn" href="Menu.aspx">Her          </a>  <strong>OBS!!! husk at logge ind før bestilling</strong> </p>
+            <h1>Velkommen til Pizzariet</h1>
+            <p>Her hos os går vi rigtig meget op i italiensk mad og kvalitet, Vi servere italienske råvare med fantastisk smag. Du kan se vores store udvalg af pizzaer ved at klikke på Menu knappen, du kan også læs mere omkring os ved at klikke på Læs mere knappen<br /><strong>OBS!!! husk at logge ind før bestilling</strong> </p>
+            <div class="MainPageBtn">
+                <a href="Menu.aspx">Menuen</a>
+                <a href="Contact.aspx">Læs Mere</a>
+            </div>
         </div>
   </form>
 </body>
