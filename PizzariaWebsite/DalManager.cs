@@ -117,5 +117,24 @@ namespace PizzariaWebsite
                 return "";
             }
         }
+
+        public bool IsLoginValid(string username, string password)
+        {
+            string query = $"SELECT * FROM login WHERE Username = '{username}' AND Password = '{password}'";
+            using (SqlConnection conn = new SqlConnection(conString))
+            {
+                conn.Open();
+                SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
+
+                if (dtbl.Rows.Count != 0)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
     }
 }
