@@ -35,7 +35,6 @@
                 <a href="Contact.aspx" class="MainPagebutton">Læs Mere</a>
             </div>
         </div>
-        
     </form>
 </body>
 </html>

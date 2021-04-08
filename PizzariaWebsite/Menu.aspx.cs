@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace PizzariaWebsite
 {
@@ -16,9 +17,9 @@ namespace PizzariaWebsite
 
         protected void AddToCart_Click(object sender, EventArgs e)
         {
-            SessionManager.SessionId = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
-            Session["pizzaId"] = SessionManager.SessionId;
-            SessionManager.AddSession((int)Session["pizzaId"]);
+            Debug.WriteLine(MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[0].Text);
+            //Session["pizzaId"] = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
+            //SessionManager.AddSession((int)Session["pizzaId"]);
 
             //get the clicked row
             //int row = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;

@@ -23,7 +23,36 @@
                 <li><a href="Contact.Aspx">Contact</a></li>
             </ul>
         </div>
+        <div class="contact-container">
+            <div class="contact-content">
+            <h1>About Us</h1>
 
+            <p>Vi startede denne italienske restaurant Marts 2021 med et mål om at kunne levere de bedste pizzaer rundt til folket.
+                Indtil videre har vi haft stor succes. Det er muligt for kunderne at bestille mad direkte fra vores hjemmesiden, hvorefter vi kan udbringe maden eller de kan komme og hente maden selv.
+                Vi har en ambition om at kunne udvikle og gøre vores forretning større.
+            </p>
+            </div>
+            <div class="contact-opening time">
+                <h1>Contact Us</h1>
+                <h3>Åbningstider</h3>
+                <ul>
+                    <li>Mandag 11:00 - 21:00</li>
+                    <li>Tirsdag 11:00 - 21:00</li>
+                    <li>Onsdag 11:00 - 21:00</li>
+                    <li>Torsdag 11:00 - 21:00</li>
+                    <li>Fredag 11:00 - 21:00</li>
+                    <li>Lørdag 13:00 - 21:00</li>
+                    <li>Søndag 13:00 - 21:00</li>
+                </ul>
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>E-mail: Gruppe3@test.dk</li>
+                    <li>Tlf: +4512345678</li>
+                    <li>Butik: Gruppetrevej 1 1234 Sjæland</li>
+                </ul>
+               
+            </div>
+        </div>
   </form>
 </body>
 </html>
