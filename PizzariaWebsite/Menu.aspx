@@ -12,39 +12,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <fieldset class="TopHeader">
-                <h1>Pizzaria</h1>
-            </fieldset>
+        <div class="navbar">
+            <img src="assets/logo.png"  class="logo"/>
+            <ul>
+                <li><a href="Default.aspx">Home</a></li>
+                <li><a href="Menu.aspx">Menu</a></li>
+                <li><a href="MyPage.Aspx">My Page</a></li>
+                <li><a href="Cart.Aspx">Cart</a></li>
+                <li><a href="Login.Aspx">Login</a></li>
+                <li><a href="Contact.Aspx">Contact</a></li>
+            </ul>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Default.aspx"><b>Home</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Menu.aspx"><b>Menu</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="MyPage.Aspx"><b>My Page</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Cart.Aspx"><b>Cart</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Login.Aspx"><b>Login</b></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Contact.Aspx"><b>Contact</b></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div class="menucontainer" id="menu">
-            <h1 class="MenuTitle">Menu</h1>
             <div class="Menucontent">
                 <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="PizzaID" DataSourceID="SqlDataSource1" Height="403px" Width="776px">
                     <Columns>

@@ -68,6 +68,7 @@
     <Content Include="assets\AvatarLogin.png" />
     <Content Include="assets\logo.png" />
     <Content Include="assets\pizzafront.png" />
+    <Content Include="assets\trustpilot footer.jpg" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
