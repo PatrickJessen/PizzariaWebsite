@@ -16,37 +16,37 @@ namespace PizzariaWebsite
         {
             if (!Page.IsPostBack)
             {
-                //DataTable dt = new DataTable();
-                //DataRow row;
-                //dt.Columns.Add("Name");
-                //dt.Columns.Add("Price");
-                //for (int i = 0; i < SessionManager.GetList().Count; i++)
-                //{
-                //    row = dt.NewRow();
-                //    row["Name"] = manager.GetPizza(SessionManager.GetList()[i]).Name;
-                //    row["Price"] = manager.GetPizza(SessionManager.GetList()[i]).Price;
-                //    dt.Rows.Add(row);
-                //    total += manager.GetPizza(SessionManager.GetList()[i]).Price;
-                //}
-                //grid.DataSource = dt;
-                //grid.DataBind();
-                //totalPrice.Text = $"Total: {total}";
+                DataTable dt = new DataTable();
+                DataRow row;
+                dt.Columns.Add("Name");
+                dt.Columns.Add("Price");
+                for (int i = 0; i < SessionManager.GetList().Count; i++)
+                {
+                    row = dt.NewRow();
+                    row["Name"] = manager.GetPizza(SessionManager.GetList()[i]).Name;
+                    row["Price"] = manager.GetPizza(SessionManager.GetList()[i]).Price;
+                    dt.Rows.Add(row);
+                    total += manager.GetPizza(SessionManager.GetList()[i]).Price;
+                }
+                grid.DataSource = dt;
+                grid.DataBind();
+                totalPrice.Text = $"Total: {total}";
 
 
 
                 //creates list of our session
-                List<string> sesList = (List<string>)Session["cart"];
-                
-                //loop through our sessions
-                for (int i = 0; i < sesList.Count; i++)
-                {
-                    //assign our session to our label
-                    lbltest.Text = sesList[i];
+                //List<string> sesList = (List<string>)Session["cart"];
 
-                    //todo: istedetfor at add til existerende label, så lav et nyt label herinde for hvert id vi har i listen.
-                    
-                }
-                
+                ////loop through our sessions
+                //for (int i = 0; i < sesList.Count; i++)
+                //{
+                //    //assign our session to our label
+                //    lbltest.Text = sesList[i];
+
+                //    //todo: istedetfor at add til existerende label, så lav et nyt label herinde for hvert id vi har i listen.
+
+                //}
+
 
             }
         }
