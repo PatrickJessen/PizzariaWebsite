@@ -12,7 +12,7 @@ namespace PizzariaWebsite
     public partial class Menu : System.Web.UI.Page
     {
         PizzaManager manager = new PizzaManager();
-        List<Pizza> pizzalist = new List<Pizza>();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -40,14 +40,19 @@ namespace PizzariaWebsite
 
         protected void AddToCart_Click(object sender, EventArgs e)
         {
+            List<Pizza> pizzalist;
             int pID = Convert.ToInt32(MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[0].Text);
             string pName = MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[1].Text;
             decimal pPrice = Convert.ToDecimal(MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[2].Text);
-            //if (Session["Cart"] == null || pizzalist == null)
-            //{
-            //    pizzalist = new List<Pizza>();
-            //}
-                pizzalist.Add(new Pizza(pID, pName, pPrice));
+            if (Session["Cart"] == null)
+            {
+                pizzalist = new List<Pizza>();
+            }
+            else
+            {
+                pizzalist = (List<Pizza>)Session["Cart"];
+            }
+            pizzalist.Add(new Pizza(pID, pName, pPrice));
                 Session["Cart"] = pizzalist;
             Debug.WriteLine(pID + pName + pPrice);
             //Session["pizzaId"] = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
