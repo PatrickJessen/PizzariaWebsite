@@ -16,17 +16,18 @@ namespace PizzariaWebsite
         {
             if (!Page.IsPostBack)
             {
+                List<Pizza> pizzalist = (List<Pizza>)Session["Cart"];
                 DataTable dt = new DataTable();
                 DataRow row;
                 dt.Columns.Add("Name");
                 dt.Columns.Add("Price");
-                for (int i = 0; i < SessionManager.GetList().Count; i++)
+                for (int i = 0; i < pizzalist.Count; i++)
                 {
                     row = dt.NewRow();
-                    row["Name"] = manager.GetPizza(SessionManager.GetList()[i]).Name;
-                    row["Price"] = manager.GetPizza(SessionManager.GetList()[i]).Price;
+                    row["Name"] = pizzalist[i].Name;
+                    row["Price"] = pizzalist[i].Price;
                     dt.Rows.Add(row);
-                    total += manager.GetPizza(SessionManager.GetList()[i]).Price;
+                    total += pizzalist[i].Price;
                 }
                 grid.DataSource = dt;
                 grid.DataBind();
