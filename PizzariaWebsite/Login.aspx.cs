@@ -21,6 +21,10 @@ namespace PizzariaWebsite
             {
                 //Add sessionID til brugeren og før brugeren videre til start siden + fjern login fra nav bare når man er logget ind
             }
+            else
+            {
+                //giv en fejlmeddelse
+            }
         }
     }
 }
