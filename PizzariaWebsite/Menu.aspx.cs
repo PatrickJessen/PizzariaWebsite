@@ -19,14 +19,18 @@ namespace PizzariaWebsite
             //SessionManager.SessionId = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
             //Session["pizzaId" + SessionManager.SessionId] = SessionManager.SessionId;
             //SessionManager.AddSession((int)Session["pizzaId" + SessionManager.SessionId]);
+
+            //get the clicked row
             int row = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
+
+            //create new list
             List<string> sesList = new List<string>();
 
+            //adds the clicked rows content to the list
             sesList.Add(MenuGrid.Rows[row].Cells[1].Text);
+
+            //assign session to our list
             Session["cart"] = sesList;
-
-
-            //sesList.Add(row.ToString());
 
         }
     }

@@ -32,13 +32,18 @@ namespace PizzariaWebsite
                 //grid.DataBind();
                 //totalPrice.Text = $"Total: {total}";
 
+
+
+                //creates list of our session
                 List<string> sesList = (List<string>)Session["cart"];
                 
+                //loop through our sessions
                 for (int i = 0; i < sesList.Count; i++)
                 {
-                    //grid.DataSource = SessionManager.sesList[i];
-                    //grid.DataBind();
+                    //assign our session to our label
                     lbltest.Text = sesList[i];
+
+                    //todo: istedetfor at add til existerende label, så lav et nyt label herinde for hvert id vi har i listen.
                     
                 }
                 
