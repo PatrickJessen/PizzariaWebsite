@@ -16,13 +16,17 @@ namespace PizzariaWebsite
 
         protected void AddToCart_Click(object sender, EventArgs e)
         {
-            SessionManager.SessionId = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
-            Session["pizzaId" + SessionManager.SessionId] = SessionManager.SessionId;
-            SessionManager.AddSession((int)Session["pizzaId" + SessionManager.SessionId]);
-        }
+            //SessionManager.SessionId = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
+            //Session["pizzaId" + SessionManager.SessionId] = SessionManager.SessionId;
+            //SessionManager.AddSession((int)Session["pizzaId" + SessionManager.SessionId]);
+            int row = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
+            List<string> sesList = new List<string>();
 
-        protected void AddToCart_Click1(object sender, EventArgs e)
-        {
+            sesList.Add(MenuGrid.Rows[row].Cells[1].Text);
+            Session["cart"] = sesList;
+
+
+            //sesList.Add(row.ToString());
 
         }
     }

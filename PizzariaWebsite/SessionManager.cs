@@ -7,19 +7,19 @@ namespace PizzariaWebsite
 {
     public static class SessionManager
     {
-        private static List<int> sesList = new List<int>();
+        public static List<string> sesList = new List<string>();
         public static int SessionId { get; set; }
-        public static void AddSession(int sessionId)
+        public static void AddSession(string sessionId)
         {
             sesList.Add(sessionId);
         }
 
-        public static List<int> GetList()
+        public static List<string> GetList()
         {
             return sesList;
         }
 
-        public static void RemoveSessionId(int sessionId)
+        public static void RemoveSessionId(string sessionId)
         {
             for (int i = 0; i < sesList.Count; i++)
             {
@@ -30,13 +30,13 @@ namespace PizzariaWebsite
             }
         }
 
-        public static int FindSessionId(int sessionId)
+        public static int FindSessionId(string sessionId)
         {
             for (int i = 0; i < sesList.Count; i++)
             {
                 if (sessionId == sesList[i])
                 {
-                    return sessionId;
+                    //return sessionId;
                 }
             }
             return 0;

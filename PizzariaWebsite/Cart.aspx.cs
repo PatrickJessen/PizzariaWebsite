@@ -16,21 +16,33 @@ namespace PizzariaWebsite
         {
             if (!Page.IsPostBack)
             {
-                DataTable dt = new DataTable();
-                DataRow row;
-                dt.Columns.Add("Name");
-                dt.Columns.Add("Price");
-                for (int i = 0; i < SessionManager.GetList().Count; i++)
+                //DataTable dt = new DataTable();
+                //DataRow row;
+                //dt.Columns.Add("Name");
+                //dt.Columns.Add("Price");
+                //for (int i = 0; i < SessionManager.GetList().Count; i++)
+                //{
+                //    row = dt.NewRow();
+                //    row["Name"] = manager.GetPizza(SessionManager.GetList()[i]).Name;
+                //    row["Price"] = manager.GetPizza(SessionManager.GetList()[i]).Price;
+                //    dt.Rows.Add(row);
+                //    total += manager.GetPizza(SessionManager.GetList()[i]).Price;
+                //}
+                //grid.DataSource = dt;
+                //grid.DataBind();
+                //totalPrice.Text = $"Total: {total}";
+
+                List<string> sesList = (List<string>)Session["cart"];
+                
+                for (int i = 0; i < sesList.Count; i++)
                 {
-                    row = dt.NewRow();
-                    row["Name"] = manager.GetPizza(SessionManager.GetList()[i]).Name;
-                    row["Price"] = manager.GetPizza(SessionManager.GetList()[i]).Price;
-                    dt.Rows.Add(row);
-                    total += manager.GetPizza(SessionManager.GetList()[i]).Price;
+                    //grid.DataSource = SessionManager.sesList[i];
+                    //grid.DataBind();
+                    lbltest.Text = sesList[i];
+                    
                 }
-                grid.DataSource = dt;
-                grid.DataBind();
-                totalPrice.Text = $"Total: {total}";
+                
+
             }
         }
 
@@ -51,8 +63,8 @@ namespace PizzariaWebsite
 
         protected void delBtn_Click(object sender, EventArgs e)
         {
-            int index = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
-            SessionManager.RemoveSessionId(index);
+            //int index = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
+            //SessionManager.RemoveSessionId(index);
         }
     }
 }
