@@ -29,6 +29,23 @@ namespace PizzariaWebsite
             }
         }
 
+        public Order AddOrder(Order order)
+        {
+            string query = "INSERT INTO Orders (OrderID, Username, Product, Price, OrderTime) VALUES (@Id, @Username, @Product, @Price, @Time)";
+            using (SqlConnection connection = new SqlConnection(conString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", order.Id);
+                cmd.Parameters.AddWithValue("@Username", order.Username);
+                cmd.Parameters.AddWithValue("@Product", order.Product);
+                cmd.Parameters.AddWithValue("@Price", order.Price);
+                cmd.Parameters.AddWithValue("@Time", order.Time);
+                cmd.ExecuteNonQuery();
+            }
+            return order;
+        }
+
         public string GetPizzaName(int id)
         {
             string query = $"SELECT Name FROM Pizza WHERE PizzaID = {id + 1}";

@@ -8,15 +8,18 @@ namespace PizzariaWebsite
     public class Order
     {
         public int Id { get; set; }
-        public string Description { get; set; }
+        public string Username { get; set; }
+        public string Product { get; set; }
         public int CustomerId { get; set; }
+        public decimal Price { get; set; }
         public DateTime Time { get; set; }
 
-        public Order(int id, string description, int customerId, DateTime time)
+        public Order(int id, string username, string product, decimal price, DateTime time)
         {
             Id = id;
-            Description = description;
-            CustomerId = customerId;
+            Username = username;
+            Product = product;
+            Price = price;
             Time = time;
         }
 

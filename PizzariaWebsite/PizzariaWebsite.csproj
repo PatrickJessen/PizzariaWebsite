@@ -70,6 +70,7 @@
     <Content Include="assets\pizzafront.png" />
     <Content Include="assets\trustpilot footer.jpg" />
     <Content Include="Cart.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -87,13 +88,22 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Class\LoginManager.cs" />
+    <Compile Include="Class\OrderManager.cs" />
     <Compile Include="Class\PizzaManager.cs" />
     <Compile Include="Class\ShoppingCart.cs" />
     <Compile Include="Class\Customer.cs" />
     <Compile Include="Class\Order.cs" />
     <Compile Include="Class\Pizza.cs" />
     <Compile Include="Class\PizzaTopping.cs" />
+    <Compile Include="Class\User.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
