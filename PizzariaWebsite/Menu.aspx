@@ -25,14 +25,15 @@
         </div>
         <div class="menucontainer" id="menu">
             <div class="Menucontent">
-                <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" Height="403px" Width="776px">
+                <h1 style="color:white">Menuen</h1>
+                <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" Height="650px" Width="550px">
                     <Columns>
                         <asp:BoundField DataField="PizzaID" HeaderText="Nr." ReadOnly="True" InsertVisible="False" SortExpression="PizzaID"></asp:BoundField>
                         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"></asp:BoundField>
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button ID="AddToCart" Text="AddToCart" runat="server" OnClick="AddToCart_Click"/>
+                                <asp:Button CssClass="AddToCartBtn" ID="AddToCart"  Text="AddToCart" runat="server" OnClick="AddToCart_Click"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

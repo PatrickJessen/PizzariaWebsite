@@ -31,7 +31,7 @@ namespace PizzariaWebsite
                 }
                 grid.DataSource = dt;
                 grid.DataBind();
-                totalPrice.Text = $"Total: {total}";
+                totalPrice.Text = $"Total Price: {total}";
 
 
 
