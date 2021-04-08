@@ -27,7 +27,7 @@ body {
         line-height: 25px;
     }
 
-.button {
+.MainPagebutton {
     font: bold 11px Arial;
     text-decoration: none !important;
     background-color: #009688;
@@ -85,20 +85,6 @@ body {
     .navbar ul li:hover::after {
         width: 100%;
     }
-
-.TopHeader {
-    background-color: darkgray;
-    text-align: center;
-    color: lightgray;
-}
-
-.LoginFieldset {
-    background-color: orangered;
-    text-align: center;
-    height: 200px;
-    width: 50%;
-}
-
 .MenuTitle {
     text-align: center;
     background-color: wheat;
@@ -144,10 +130,61 @@ body {
     background: #107afd;
     font-weight: 600;
 }
+.login-box
+{
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+.login-box h1
+{
+    float: left;
+    font-size: 40px;
+    border-bottom: 6px solid #fff;
+    margin-bottom: 50px;
+    padding:13px 0;
 
-.grid {
-    display: grid;
-    text-align: center;
-    align-content: center;
-    background-color: rgb(33, 37, 41);
+}
+.login-box img {
+ width: 50%;
+ height: 50%;
+ float: right;
+}
+.textbox
+{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid #fff;
+}
+.textbox input
+{
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+    font-size: 18px;
+}
+    .textbox a {
+        text-decoration: none !important;
+        color: #009688;
+    }
+        .textbox a:hover {
+            color: #009688;
+            text-decoration:none !important;
+            cursor: pointer;
+        }
+
+#LoginButton
+{
+    width: 100%;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 18px;
 }

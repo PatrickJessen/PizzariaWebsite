@@ -31,8 +31,8 @@
                 <strong>OBS!!! husk at logge ind før bestilling</strong>
             </p>
             <div>
-                <a href="Menu.aspx" class="button">Menuen</a>
-                <a href="Contact.aspx" class="button">Læs Mere</a>
+                <a href="Menu.aspx" class="MainPagebutton">Menuen</a>
+                <a href="Contact.aspx" class="MainPagebutton">Læs Mere</a>
             </div>
         </div>
         
