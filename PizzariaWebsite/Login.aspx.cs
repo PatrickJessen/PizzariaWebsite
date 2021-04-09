@@ -27,17 +27,19 @@ namespace PizzariaWebsite
                 Session["Username"] = null;
                 Response.Redirect("Login.aspx");
             }
-
-            if (lm.IsLoginValid(username.Value, password.Value) == true)
-            {
-                //Add sessionID til brugeren og før brugeren videre til start siden + fjern login fra nav bare når man er logget ind
-                Session["Username"] = username.Value;
-                Response.Redirect("MyPage.aspx");
-            }
             else
             {
-                failText.Text = "Login Failed!";
-                //giv en fejlmeddelse
+                if (lm.IsLoginValid(username.Value, password.Value) == true)
+                {
+                    //Add sessionID til brugeren og før brugeren videre til start siden + fjern login fra nav bare når man er logget ind
+                    Session["Username"] = username.Value;
+                    Response.Redirect("MyPage.aspx");
+                }
+                else
+                {
+                    failText.Text = "Login Failed!";
+                    //giv en fejlmeddelse
+                }
             }
         }
     }
