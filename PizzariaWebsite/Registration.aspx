@@ -47,7 +47,7 @@
 
             <p></p>
             <label for="phoneNr"><b>Phone Number</b></label>
-            <input id="phoneNr" runat="server" type="text" placeholder="Enter Phone number" name="phoneNr" required>
+            <input id="phoneNr" runat="server" type="text" placeholder="Enter Phone number" name="phoneNr">
 
             <p></p>
             <label for="adress"><b>Adress</b></label>
