@@ -40,6 +40,21 @@ namespace PizzariaWebsite
 
         protected void AddToCart_Click(object sender, EventArgs e)
         {
+            //List<Pizza> pizzalist;
+            //int pID = Convert.ToInt32(MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[0].Text);
+            //string pName = MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[1].Text;
+            //decimal pPrice = Convert.ToDecimal(MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[2].Text);
+            //if (Session["Cart"] == null)
+            //{
+            //    pizzalist = new List<Pizza>();
+            //}
+            //else
+            //{
+            //    pizzalist = (List<Pizza>)Session["Cart"];
+            //}
+            //pizzalist.Add(new Pizza(pID, pName, pPrice));
+            //Session["Cart"] = pizzalist;
+
             List<Pizza> pizzalist;
             int pID = Convert.ToInt32(MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[0].Text);
             string pName = MenuGrid.Rows[((GridViewRow)((Control)sender).NamingContainer).RowIndex].Cells[1].Text;
@@ -52,8 +67,43 @@ namespace PizzariaWebsite
             {
                 pizzalist = (List<Pizza>)Session["Cart"];
             }
-            pizzalist.Add(new Pizza(pID, pName, pPrice));
-            Session["Cart"] = pizzalist;
+
+            CalculateQuantity(pizzalist, pID, pName, pPrice);
+            
+        }
+
+        private void CalculateQuantity(List<Pizza> pizzalist, int pID, string pName, decimal pPrice)
+        {
+            //check if pizzalist is empty if it is we add a pizza to it, otherwise we cant loop through the list
+            if (pizzalist.Count == 0)
+            {
+                pizzalist.Add(new Pizza(pID, pName, pPrice, 1, pPrice));
+                Session["Cart"] = pizzalist;
+            }
+            else
+            {
+                for (int i = 0; i < pizzalist.Count; i++)
+                {
+                    //check if we already have the same pizza in the list
+                    if (pizzalist[i].Id == pID)
+                    {
+                        //add to quantity if theres added the same pizza multiple times
+                        pizzalist[i].Quantity++;
+                        //calculates the price
+                        pizzalist[i].Price += pPrice;
+                        //break the loop cause we only need to do this once
+                        break;
+                    }
+                    //check if we're at the end of the loop
+                    else if (i == pizzalist.Count - 1)
+                    {
+                        //add new pizza to the list if theres none already matching
+                        pizzalist.Add(new Pizza(pID, pName, pPrice, 1, pPrice));
+                        //break the loop otherwise it adds +1 to quantity
+                        break;
+                    }
+                }
+            }
         }
     }
 }

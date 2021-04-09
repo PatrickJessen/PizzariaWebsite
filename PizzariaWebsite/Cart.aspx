@@ -33,6 +33,7 @@
                 <Columns>
                     <asp:BoundField DataField="Name" HeaderText="Name" />
                     <asp:BoundField DataField="Price" HeaderText="Price" />
+                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
                     <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:Button ID="delBtn" CssClass="delBtn" runat="server" Text="Delete" OnClick="delBtn_Click"/>

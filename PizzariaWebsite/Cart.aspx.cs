@@ -30,14 +30,21 @@ namespace PizzariaWebsite
                     //create a datatable and datarow which we fill out with the stuff we got in our pizzalist
                     DataTable dt = new DataTable();
                     DataRow row;
+                    //add our columns that are matching our gridview to the datatable
                     dt.Columns.Add("Name");
                     dt.Columns.Add("Price");
+                    dt.Columns.Add("Quantity");
                     for (int i = 0; i < pizzalist.Count; i++)
                     {
+                        //create new row
                         row = dt.NewRow();
+                        //add our pizza elements to the rows
                         row["Name"] = pizzalist[i].Name;
                         row["Price"] = pizzalist[i].Price;
+                        row["Quantity"] = pizzalist[i].Quantity;
+                        //add the rows to datatable rows
                         dt.Rows.Add(row);
+                        //calculates our total price
                         total += pizzalist[i].Price;
                     }
                     grid.DataSource = dt;
@@ -88,13 +95,21 @@ namespace PizzariaWebsite
             {
                 if (pName == pizzalist[i].Name)
                 {
-                    //if the name of the clicked pizza is the same as in our pizzalist then remove it from the list
-                    pizzalist.RemoveAt(i);
+                    if (pizzalist[i].Quantity > 1)
+                    {
+                        pizzalist[i].Quantity--;
+                        pizzalist[i].Price -= pizzalist[i].SinglePrice;
+                    }
+                    else
+                    {
+                        //if the name of the clicked pizza is the same as in our pizzalist then remove it from the list
+                        pizzalist.RemoveAt(i);
+                    }
 
                     //check if our pizzalist is empty
                     if (pizzalist.Count == 0)
                     {
-                        //if its empty set our session cart to 0 to so our checkout button and total price labels gets invisible again
+                        //if its empty set our session cart to null so our checkout button and total price labels gets invisible again
                         Session["Cart"] = null;
                     }
                     //Updates our page so we can see the change instantly
