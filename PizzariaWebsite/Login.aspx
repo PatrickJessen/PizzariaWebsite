@@ -20,7 +20,7 @@
                 <li><a href="Menu.aspx">Menu</a></li>
                 <li><a href="MyPage.Aspx">My Page</a></li>
                 <li><a href="Cart.Aspx">Cart</a></li>
-                <li><a href="Login.Aspx">Login</a></li>
+                <li><a href="Login.Aspx" id="LoginPage">Login</a></li>
                 <li><a href="Contact.Aspx">Contact</a></li>
             </ul>
         </div>
@@ -44,6 +44,8 @@
             <label>
               <input type="checkbox" runat="server" checked="checked" name="remember"> Remember
             </label>
+
+            <a href="Registration.aspx">&emsp;&emsp;&nbsp;<b>Register</b></a>
 
             <p></p>
 

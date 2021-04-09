@@ -9,15 +9,6 @@ namespace PizzariaWebsite
     {
         DalManager dm = new DalManager();
 
-        //public Boolean IsLoginValid(string uname, string psw)
-        //{
-        //    if (dm.IsUsernameValid(uname) == uname && dm.IsPasswordValid(psw) == psw)
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
         public bool IsLoginValid(string uname, string psw)
         {
             if (dm.IsLoginValid(uname, psw))

@@ -51,7 +51,7 @@ namespace PizzariaWebsite
         #region IsLoginValid
         public bool IsLoginValid(string username, string password)
         {
-            string query = $"SELECT * FROM login WHERE Username = '{username}' AND Password = '{password}'";
+            string query = $"SELECT * FROM Users WHERE Username = '{username}' AND Password = '{password}'";
             using (SqlConnection conn = new SqlConnection(conString))
             {
                 conn.Open();
