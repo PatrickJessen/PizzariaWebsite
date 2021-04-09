@@ -16,6 +16,10 @@ namespace PizzariaWebsite
             //{
             //    Response.Redirect("Default.aspx");
             //}
+            if (Session["Username"] != null)
+            {
+                LoginPage.InnerText = "Logout";
+            }
         }
 
         protected void BuyPizza_Click(object sender, EventArgs e)

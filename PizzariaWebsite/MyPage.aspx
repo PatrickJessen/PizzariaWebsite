@@ -19,7 +19,7 @@
                 <li><a href="Menu.aspx">Menu</a></li>
                 <li><a href="MyPage.Aspx">My Page</a></li>
                 <li><a href="Cart.Aspx">Cart</a></li>
-                <li><a href="Login.Aspx">Login</a></li>
+                <li><a href="Login.Aspx" id="LoginPage" runat="server">Login</a></li>
                 <li><a href="Contact.Aspx">Contact</a></li>
             </ul>
         </div>

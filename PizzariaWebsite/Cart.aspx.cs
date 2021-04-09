@@ -45,6 +45,11 @@ namespace PizzariaWebsite
                     totalPrice.Text = $"Total Price: {total}";
                 }
             }
+
+            if (Session["Username"] != null)
+            {
+                LoginPage.InnerText = "Logout";
+            }
         }
 
         protected void grid_RowDeleting(object sender, GridViewDeleteEventArgs e)
