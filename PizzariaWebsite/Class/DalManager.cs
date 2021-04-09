@@ -10,6 +10,7 @@ namespace PizzariaWebsite
     public class DalManager
     {
         string conString = "Data Source=172.16.7.3,49686;Initial Catalog=PizzaDB;User ID=sa;Password=Kode1234!";
+        #region GetPizzaData
         public List<Pizza> GetPizzaData()
         {
             List<Pizza> pizzaList = new List<Pizza>();
@@ -28,7 +29,8 @@ namespace PizzariaWebsite
                 return pizzaList;
             }
         }
-
+        #endregion
+        #region AddOrder
         public Order AddOrder(Order order)
         {
             string query = "INSERT INTO Orders (OrderID, Username, Product, Price, OrderTime) VALUES (@Id, @Username, @Product, @Price, @Time)";
@@ -45,7 +47,8 @@ namespace PizzariaWebsite
             }
             return order;
         }
-
+        #endregion
+        #region IsLoginValid
         public bool IsLoginValid(string username, string password)
         {
             string query = $"SELECT * FROM login WHERE Username = '{username}' AND Password = '{password}'";
@@ -64,7 +67,8 @@ namespace PizzariaWebsite
                 return false;
             }
         }
-
+        #endregion
+        #region InsertUserInfo
         public User InsertUserInfo(User user)
         {
             string query = "INSERT INTO UserInfo (UserID, Fname, Lname, PhoneNr, Adress) VALUES (@UserID, @Fname, @Lname, @PhoneNr, @Adress)";
@@ -81,7 +85,8 @@ namespace PizzariaWebsite
             }
             return user;
         }
-
+        #endregion
+        #region RegisterUser
         public User RegisterUser(User user)
         {
             string query = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
@@ -95,7 +100,8 @@ namespace PizzariaWebsite
             }
             return user;
         }
-
+        #endregion
+        #region GetUserID
         private int GetUserID(User user)
         {
             string query = $"SELECT UserID FROM Users WHERE Username = '{RegisterUser(user).Username}'";
@@ -110,7 +116,8 @@ namespace PizzariaWebsite
                 return (int)dt.Rows[0]["id"];
             }
         }
-
+        #endregion
+        #region IsUsernameTaken
         public bool IsUsernameTaken(string username)
         {
             string query = $"SELECT Username FROM Users WHERE Username = '{username}'";
@@ -133,5 +140,6 @@ namespace PizzariaWebsite
                 return false;
             }
         }
+        #endregion
     }
 }
