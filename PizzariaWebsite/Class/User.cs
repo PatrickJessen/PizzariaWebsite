@@ -15,14 +15,18 @@ namespace PizzariaWebsite
         public int PhoneNumber { get; set; }
         public string Adress { get; set; }
 
-        public User(int id, string username, string firstName, string lastName, int phoneNumber, string adress)
+        public User(string firstName, string lastName, int phoneNumber, string adress)
         {
-            Id = id;
-            Username = username;
             FirstName = firstName;
             LastName = lastName;
             PhoneNumber = phoneNumber;
             Adress = adress;
+        }
+
+        public User(string username, string password)
+        {
+            Username = username;
+            Password = password;
         }
     }
 }
