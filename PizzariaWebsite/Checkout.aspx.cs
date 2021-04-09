@@ -29,7 +29,7 @@ namespace PizzariaWebsite
                 user = (List<User>)Session["Username"];
                 for (int i = 0; i < products.Count; i++)
                 {
-                    manager.AddOrder(new Order(products[i].Id, user[0].Username, products[i].Name, products[i].Price, DateTime.Now));
+                    manager.AddOrder(new Order(products[i].Id, user[0].Username, DateTime.Now, products[i].Id));
                 }
             }
         }

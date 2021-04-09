@@ -26,6 +26,7 @@
         </div>
       <div class="login-box">
           <h1>Login</h1>
+          <asp:Label ID="failText" runat="server"></asp:Label>
           <img src="assets/AvatarLogin.png" />
           <div class="textbox">
              <i class="fa fa-user"></i>

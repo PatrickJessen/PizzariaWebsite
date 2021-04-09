@@ -33,16 +33,15 @@ namespace PizzariaWebsite
         #region AddOrder
         public Order AddOrder(Order order)
         {
-            string query = "INSERT INTO Orders (OrderID, Username, Product, Price, OrderTime) VALUES (@Id, @Username, @Product, @Price, @Time)";
+            string query = "INSERT INTO Orders (OrderID, Username, OrderTime, PizzaID) VALUES (@Id, @Username, @Time, @PizzaID)";
             using (SqlConnection connection = new SqlConnection(conString))
             {
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@Id", order.Id);
                 cmd.Parameters.AddWithValue("@Username", order.Username);
-                cmd.Parameters.AddWithValue("@Product", order.Product);
-                cmd.Parameters.AddWithValue("@Price", order.Price);
                 cmd.Parameters.AddWithValue("@Time", order.Time);
+                cmd.Parameters.AddWithValue("@PizzaID", order.PizzaId);
                 cmd.ExecuteNonQuery();
             }
             return order;
@@ -141,5 +140,37 @@ namespace PizzariaWebsite
             }
         }
         #endregion
+
+        public List<User> GetUserInfo(string username)
+        {
+            List<User> users = new List<User>();
+            string query = $"SELECT * FROM UserInfo INNER JOIN Users ON Users.UserID = {GetUsernameID(username)}";
+            using (SqlConnection connection = new SqlConnection(conString))
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(dt);
+                users.Add(new User(dt.Rows[0]["fName"].ToString(), dt.Rows[0]["Lname"].ToString(), Convert.ToInt32(dt.Rows[0]["PhoneNr"]), dt.Rows[0]["Adress"].ToString()));
+
+                return users;
+            }
+        }
+
+        private int GetUsernameID(string username)
+        {
+            string query = $"SELECT UserID FROM Users WHERE Username = '{username}'";
+            using (SqlConnection connection = new SqlConnection(conString))
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(dt);
+
+                return (int)dt.Rows[0]["UserID"];
+            }
+        }
     }
 }
