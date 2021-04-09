@@ -25,14 +25,13 @@
             </ul>
         </div>
         <div class="MainPageContent">
-            <h1>Velkommen til Pizzariet</h1>
-            <p>
-                Her hos os går vi rigtig meget op i italiensk mad og kvalitet, Vi servere italienske råvare med fantastisk smag. Du kan se vores store udvalg af pizzaer ved at klikke på Menu knappen, du kan også læs mere omkring os ved at klikke på Læs mere knappen<br />
-                <strong>OBS!!! husk at logge ind før bestilling</strong>
+            <h1>Welcome to Pizzariet</h1>
+            <p>Here with us, we care very much about Italian food and quality. We serve Italian ingredients with fantastic taste. You can see our large selection of pizzas by clicking the Menu button, you can also read more about us by clicking the About Us button<br />
+                <strong style="font-weight:bold">IMPORTANT!!! Remember to sign in first, before you order your pizza</strong>
             </p>
             <div>
-                <a href="Menu.aspx" class="MainPagebutton">Menuen</a>
-                <a href="Contact.aspx" class="MainPagebutton">Læs Mere</a>
+                <a href="Menu.aspx" class="MainPagebutton">Menu</a>
+                <a href="Contact.aspx" class="MainPagebutton">About Us</a>
             </div>
         </div>
     </form>

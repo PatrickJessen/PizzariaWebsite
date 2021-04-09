@@ -26,7 +26,7 @@
         <div class="menucontainer" id="menu">
             <div class="Menucontent">
                 <h1 style="color:white">Menuen</h1>
-                <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" Height="650px" Width="550px">
+                <asp:GridView ID="MenuGrid" runat="server" AutoGenerateColumns="False" Height="750px" Width="550px">
                     <Columns>
                         <asp:BoundField DataField="PizzaID" HeaderText="Nr." ReadOnly="True" InsertVisible="False" SortExpression="PizzaID"></asp:BoundField>
                         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name"></asp:BoundField>
