@@ -46,78 +46,6 @@ namespace PizzariaWebsite
             return order;
         }
 
-        public string GetPizzaName(int id)
-        {
-            string query = $"SELECT Name FROM Pizza WHERE PizzaID = {id + 1}";
-            using (SqlConnection connection = new SqlConnection(conString))
-            {
-                connection.Open();
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand(query, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                adapter.Fill(dt);
-
-                return dt.Rows[0]["Name"].ToString();
-            }
-        }
-
-        public decimal GetPizzaPrice(int id)
-        {
-            string query = $"SELECT Price FROM Pizza WHERE PizzaID = {id + 1}";
-            using (SqlConnection connection = new SqlConnection(conString))
-            {
-                connection.Open();
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand(query, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                adapter.Fill(dt);
-
-                return decimal.Parse(dt.Rows[0]["Price"].ToString());
-            }
-        }
-
-        public string IsUsernameValid(string username)
-        {
-            try
-            {
-                string query = $"SELECT * FROM login WHERE Username = '{username}'";
-                using (SqlConnection conn = new SqlConnection(conString))
-                {
-                    conn.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-                    DataTable dtbl = new DataTable();
-                    sda.Fill(dtbl);
-
-                    return dtbl.Rows[0]["username"].ToString();
-                }
-            }
-            catch
-            {
-                return "";
-            }
-        }
-
-        public string IsPasswordValid(string password)
-        {
-            try
-            {
-                string query = $"SELECT * FROM login WHERE Password = '{password}'";
-                using (SqlConnection conn = new SqlConnection(conString))
-                {
-                    conn.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-                    DataTable dtbl = new DataTable();
-                    sda.Fill(dtbl);
-
-                    return dtbl.Rows[0]["password"].ToString();
-                }
-            }
-            catch
-            {
-                return "";
-            }
-        }
-
         public bool IsLoginValid(string username, string password)
         {
             string query = $"SELECT * FROM login WHERE Username = '{username}' AND Password = '{password}'";
@@ -154,7 +82,7 @@ namespace PizzariaWebsite
             return user;
         }
 
-        public User RegistreUser(User user)
+        public User RegisterUser(User user)
         {
             string query = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
             using (SqlConnection connection = new SqlConnection(conString))
@@ -170,7 +98,7 @@ namespace PizzariaWebsite
 
         private int GetUserID(User user)
         {
-            string query = $"SELECT UserID FROM Users WHERE Username = '{RegistreUser(user).Username}'";
+            string query = $"SELECT UserID FROM Users WHERE Username = '{RegisterUser(user).Username}'";
             using (SqlConnection connection = new SqlConnection(conString))
             {
                 connection.Open();
@@ -196,7 +124,7 @@ namespace PizzariaWebsite
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    if (username == dt.Rows[i]["Username"])
+                    if (username == dt.Rows[i]["Username"].ToString())
                     {
                         return true;
                     }

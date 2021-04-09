@@ -11,7 +11,7 @@ namespace PizzariaWebsite
 
         public User RegistreUser(User user)
         {
-            return manager.RegistreUser(user);
+            return manager.RegisterUser(user);
         }
 
         public User InsertUserInfo(User user)

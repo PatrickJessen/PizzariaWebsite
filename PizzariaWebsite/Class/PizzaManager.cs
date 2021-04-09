@@ -14,11 +14,6 @@ namespace PizzariaWebsite
             pizzaList = manager.GetPizzaData();
         }
 
-        public string GetPizzaName(int id)
-        {
-            return manager.GetPizzaName(id);
-        }
-
         public List<Pizza> GetAllPizza()
         {
             return pizzaList;
