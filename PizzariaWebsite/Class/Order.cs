@@ -22,10 +22,5 @@ namespace PizzariaWebsite
             Price = price;
             Time = time;
         }
-
-        public void AddOrder()
-        {
-
-        }
     }
 }
