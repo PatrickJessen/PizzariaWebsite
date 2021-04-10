@@ -13,5 +13,10 @@ namespace PizzariaWebsite
         {
             return manager.AddOrder(order);
         }
+
+        public List<Order> GetOrders()
+        {
+            return manager.GetOrders();
+        }
     }
 }

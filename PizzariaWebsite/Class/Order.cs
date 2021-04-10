@@ -13,6 +13,7 @@ namespace PizzariaWebsite
         public DateTime Time { get; set; }
         public int PizzaId { get; set; }
         public int Quantity { get; set; }
+        public int DeliveryTime { get; set; }
 
         public Order(int id, string username, DateTime time, int pizzaId, int quantity)
         {
@@ -21,6 +22,16 @@ namespace PizzariaWebsite
             Time = time;
             PizzaId = pizzaId;
             Quantity = quantity;
+        }
+
+        public Order(int id, string username, DateTime time, int pizzaId, int quantity, int deliveryTime)
+        {
+            Id = id;
+            Username = username;
+            Time = time;
+            PizzaId = pizzaId;
+            Quantity = quantity;
+            DeliveryTime = deliveryTime;
         }
     }
 }

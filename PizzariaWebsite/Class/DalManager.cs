@@ -33,7 +33,7 @@ namespace PizzariaWebsite
         #region AddOrder
         public Order AddOrder(Order order)
         {
-            string query = "INSERT INTO Orders (Username, OrderDateTime, PizzaID, Quantity) VALUES (@Username, @Time, @PizzaID, @Quantity)";
+            string query = "INSERT INTO Orders (Username, OrderDateTime, PizzaID, Quantity, DeliveryTime) VALUES (@Username, @Time, @PizzaID, @Quantity, @DeliveryTime)";
             using (SqlConnection connection = new SqlConnection(conString))
             {
                 connection.Open();
@@ -42,6 +42,7 @@ namespace PizzariaWebsite
                 cmd.Parameters.AddWithValue("@Time", order.Time);
                 cmd.Parameters.AddWithValue("@PizzaID", order.PizzaId);
                 cmd.Parameters.AddWithValue("@Quantity", order.Quantity);
+                cmd.Parameters.AddWithValue("@DeliveryTime", 30);
                 cmd.ExecuteNonQuery();
             }
             return order;
@@ -171,6 +172,25 @@ namespace PizzariaWebsite
 
                 return (int)dt.Rows[0]["UserID"];
             }
+        }
+
+        public List<Order> GetOrders()
+        {
+                List<Order> orders = new List<Order>();
+                string query = $"SELECT * FROM Orders";
+                using (SqlConnection connection = new SqlConnection(conString))
+                {
+                    connection.Open();
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.Fill(dt);
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        orders.Add(new Order(Convert.ToInt32(dt.Rows[i]["OrderID"]), dt.Rows[i]["Username"].ToString(), Convert.ToDateTime(dt.Rows[i]["OrderDateTime"]), Convert.ToInt32(dt.Rows[i]["PizzaID"]), Convert.ToInt32(dt.Rows[i]["Quantity"]), Convert.ToInt32(dt.Rows[i]["DeliveryTime"])));
+                    }
+                    return orders;
+                }
         }
     }
 }
