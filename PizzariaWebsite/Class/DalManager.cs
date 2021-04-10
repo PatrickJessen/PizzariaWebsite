@@ -33,15 +33,15 @@ namespace PizzariaWebsite
         #region AddOrder
         public Order AddOrder(Order order)
         {
-            string query = "INSERT INTO Orders (OrderID, Username, OrderTime, PizzaID) VALUES (@Id, @Username, @Time, @PizzaID)";
+            string query = "INSERT INTO Orders (Username, OrderDateTime, PizzaID, Quantity) VALUES (@Username, @Time, @PizzaID, @Quantity)";
             using (SqlConnection connection = new SqlConnection(conString))
             {
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@Id", order.Id);
                 cmd.Parameters.AddWithValue("@Username", order.Username);
                 cmd.Parameters.AddWithValue("@Time", order.Time);
                 cmd.Parameters.AddWithValue("@PizzaID", order.PizzaId);
+                cmd.Parameters.AddWithValue("@Quantity", order.Quantity);
                 cmd.ExecuteNonQuery();
             }
             return order;
