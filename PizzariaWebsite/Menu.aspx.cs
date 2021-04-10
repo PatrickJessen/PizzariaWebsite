@@ -36,10 +36,9 @@ namespace PizzariaWebsite
                 MenuGrid.DataBind();
             }
 
-            if (LoginPage.InnerText == "Logout")
+            if (Session["Username"] != null)
             {
-                Session["Username"] = null;
-                Response.Redirect("Login.aspx");
+                LoginPage.InnerText = "Logout";
             }
         }
 
