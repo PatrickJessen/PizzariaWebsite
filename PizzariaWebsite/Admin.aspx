@@ -31,6 +31,7 @@
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox1" runat="server" Text="" placeholder="Change Delivery time"></asp:TextBox>
                                     <asp:Button ID="UpdateBtn" CssClass="delBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click"/>
+                                    <asp:Button ID="Delivered" CssClass="delBtn" runat="server" Text="Update" OnClick="Delivered_Click"/>
                                 </ItemTemplate>
                             </asp:TemplateField>
                     </Columns>

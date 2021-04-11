@@ -108,11 +108,8 @@
     <Compile Include="Class\LoginManager.cs" />
     <Compile Include="Class\OrderManager.cs" />
     <Compile Include="Class\PizzaManager.cs" />
-    <Compile Include="Class\ShoppingCart.cs" />
-    <Compile Include="Class\Customer.cs" />
     <Compile Include="Class\Order.cs" />
     <Compile Include="Class\Pizza.cs" />
-    <Compile Include="Class\PizzaTopping.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Class\UserManager.cs" />
     <Compile Include="Contact.aspx.cs">
@@ -162,7 +159,6 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

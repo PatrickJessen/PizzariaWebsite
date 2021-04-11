@@ -59,5 +59,10 @@ namespace PizzariaWebsite
             sound.SoundLocation = @"C:\Users\patri\OneDrive\Skrivebord\sound\Alert.wav";
             sound.Play();
         }
+
+        protected void Delivered_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

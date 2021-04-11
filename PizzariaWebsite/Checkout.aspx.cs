@@ -25,16 +25,13 @@ namespace PizzariaWebsite
         protected void BuyPizza_Click(object sender, EventArgs e)
         {
             List<Pizza> products;
-            if (cardNumber.Text.Length != 16 && cardExpire.Text != null && cardCVV.Text.Length != 2)
+            OrderManager manager = new OrderManager();
+            products = (List<Pizza>)Session["Cart"];
+            for (int i = 0; i < products.Count; i++)
             {
-                OrderManager manager = new OrderManager();
-                products = (List<Pizza>)Session["Cart"];
-                for (int i = 0; i < products.Count; i++)
-                {
-                    manager.AddOrder(new Order(products[i].Id, Session["Username"].ToString(), DateTime.Now, products[i].Id, products[i].Quantity));
-                }
-                Response.Redirect("MyPage.aspx");
+                manager.AddOrder(new Order(products[i].Id, Session["Username"].ToString(), DateTime.Now, products[i].Id, products[i].Quantity));
             }
+            Response.Redirect("MyPage.aspx");
         }
     }
 }

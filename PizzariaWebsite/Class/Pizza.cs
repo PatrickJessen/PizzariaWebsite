@@ -9,7 +9,6 @@ namespace PizzariaWebsite
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<PizzaTopping> Toppings { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public decimal SinglePrice { get; set; }
@@ -19,7 +18,6 @@ namespace PizzariaWebsite
             Id = id;
             Name = name;
             Price = price;
-            Toppings = new List<PizzaTopping>();
             Quantity = quantity;
             SinglePrice = singlePrice;
         }
@@ -29,12 +27,6 @@ namespace PizzariaWebsite
             Id = id;
             Name = name;
             Price = price;
-            Toppings = new List<PizzaTopping>();
-        }
-
-        public void AddTopping(PizzaTopping top)
-        {
-            Toppings.Add(top);
         }
     }
 }
