@@ -26,10 +26,9 @@
                 <li><a href="Contact.Aspx">Contact</a></li>
             </ul>
         </div>
-      <div>
+      <div class="CheckoutPayment">
           <label>Credit card number</label>
           <asp:TextBox ID="cardNumber" runat="server" TextMode="Number" ></asp:TextBox>
-      </div>
       <p>
           <label>Expire date<asp:TextBox ID="cardExpire" runat="server" ></asp:TextBox>
           </label>
@@ -38,6 +37,7 @@
           <label>CVV code</label><asp:TextBox ID="cardCVV" runat="server" TextMode="Number" ></asp:TextBox>
       </p>
       <asp:Button ID="BuyPizza" runat="server" Text="Buy" OnClick="BuyPizza_Click"/>
+      </div>
   </form>
 </body>
 </html>
