@@ -76,7 +76,7 @@ namespace PizzariaWebsite
             {
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@UserID", user.Id);
+                cmd.Parameters.AddWithValue("@UserID", GetUserID(user));
                 cmd.Parameters.AddWithValue("@Fname", user.FirstName);
                 cmd.Parameters.AddWithValue("@Lname", user.LastName);
                 cmd.Parameters.AddWithValue("@PhoneNr", user.PhoneNumber);
@@ -94,8 +94,8 @@ namespace PizzariaWebsite
             {
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@UserID", GetUserID(user));
-                cmd.Parameters.AddWithValue("@Fname", user.Password);
+                cmd.Parameters.AddWithValue("@Username", user.Username);
+                cmd.Parameters.AddWithValue("@Password", user.Password);
                 cmd.ExecuteNonQuery();
             }
             return user;
@@ -104,7 +104,7 @@ namespace PizzariaWebsite
         #region GetUserID
         private int GetUserID(User user)
         {
-            string query = $"SELECT UserID FROM Users WHERE Username = '{RegisterUser(user).Username}'";
+            string query = $"SELECT UserID FROM Users WHERE Username = '{user.Username}'";
             using (SqlConnection connection = new SqlConnection(conString))
             {
                 connection.Open();
@@ -113,7 +113,7 @@ namespace PizzariaWebsite
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 adapter.Fill(dt);
 
-                return (int)dt.Rows[0]["id"];
+                return (int)dt.Rows[0]["UserID"];
             }
         }
         #endregion

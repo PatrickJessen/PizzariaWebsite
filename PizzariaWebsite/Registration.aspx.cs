@@ -19,6 +19,7 @@ namespace PizzariaWebsite
 
         protected void RegBtn_Click(object sender, EventArgs e)
         {
+            User user = new User(fName.Value, lName.Value, Convert.ToInt32(phoneNr.Value), adress.Value, username.Value, password.Value);
             UserManager manager = new UserManager();
             if (manager.IsUsernameTaken(username.Value))
             {
@@ -27,8 +28,8 @@ namespace PizzariaWebsite
             }
             else
             {
-                manager.RegistreUser(new User(username.Value, password.Value));
-                manager.InsertUserInfo(new User(fName.Value, lName.Value, Convert.ToInt32(phoneNr.Value), adress.Value));
+                manager.RegistreUser(user);
+                manager.InsertUserInfo(user);
             }
         }
     }

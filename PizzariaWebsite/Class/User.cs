@@ -23,6 +23,16 @@ namespace PizzariaWebsite
             Adress = adress;
         }
 
+        public User(string firstName, string lastName, int phoneNumber, string adress, string username, string password)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            PhoneNumber = phoneNumber;
+            Adress = adress;
+            Username = username;
+            Password = password;
+        }
+
         public User(string username, string password)
         {
             Username = username;
