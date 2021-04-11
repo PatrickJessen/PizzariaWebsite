@@ -35,7 +35,11 @@ namespace PizzariaWebsite
                 MenuGrid.DataSource = dt;
                 MenuGrid.DataBind();
             }
-            
+
+            if (Session["Username"] != null)
+            {
+                LoginPage.InnerText = "Logout";
+            }
         }
 
         protected void AddToCart_Click(object sender, EventArgs e)
