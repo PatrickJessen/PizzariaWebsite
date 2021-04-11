@@ -4,9 +4,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 120vh;
+    height: 100vh;
 }
-
+/*CSS to mainpage content that means the text you see in the middle*/
 .MainPageContent {
     width: 100%;
     position: absolute;
@@ -15,18 +15,18 @@ body {
     text-align: center;
     color: #fff;
 }
-
+/*Position the h1 tag on mainpage*/
     .MainPageContent h1 {
         font-size: 70px;
         margin-top: 80px;
     }
-
+/*Position the p tag on mainpage*/
     .MainPageContent p {
         margin: 20px auto;
         font-weight: 100;
         line-height: 25px;
     }
-
+/*The two aqua color buttons is here where i style*/
 .MainPagebutton {
     font: bold 11px Arial;
     text-decoration: none !important;
@@ -39,11 +39,7 @@ body {
     border-left: 10px solid #009688;
     border-radius: 10px;
 }
-
-    .button:hover {
-        color: #fff;
-        text-decoration: none;
-    }
+/*Position the navbar to display flex that means side by side*/
 .navbar {
     width: 85%;
     margin: auto;
@@ -52,25 +48,25 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-
+/*Logo styling*/
 .logo {
     width: 200px;
     cursor: pointer;
 }
-
+/*Style the list inside our navbar*/
 .navbar ul li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
 }
-
+/*Style the a tags inside the list*/
     .navbar ul li a {
         text-decoration: none;
         color: #fff;
         text-transform: uppercase;
     }
-
+/*Made som after and hover effects to when the mouse is on the Menu button its slides a blue line under the a tag and moves away when the cursor is away from a tag*/
     .navbar ul li::after {
         content: '';
         height: 3px;
@@ -85,21 +81,18 @@ body {
     .navbar ul li:hover::after {
         width: 100%;
     }
-.MenuTitle {
-    text-align: center;
-    background-color: wheat;
-    color: gray;
-}
-
+/*Inside the menugrid i have added the background color black but its not full on black, on the rgba the last digit is opacity thats transparent*/
 #MenuGrid {
     background-color: rgba(0,0,0,0.5);
     color: white;
     font-weight: bold;
 }
+/*Making div menucontent 100% width*/
 .Menucontent
 {
     width:100%;
 }
+/*Style to addtocart button in menu, it has a border and white text*/
 .AddToCartBtn {
     background-color: #009688;
     border: 2px solid #009688;
@@ -107,17 +100,7 @@ body {
     color: #fff;
     font-size: 18px;
 }
-
-#ToppingGrid {
-    background-color: white;
-    float: right;
-    position: relative;
-    top: -397px;
-    left: -388px;
-    width: 371px;
-    height: 321px;
-}
-
+/*The delete button in Cart site is very close to the addtocart button*/
 .delBtn {
     background-color: #009688;
     border: 2px solid #009688;
@@ -127,13 +110,13 @@ body {
     width: 35%;
  
 }
-
+/*Style to the CartGrid in cart side the same as menugrid*/
 #grid {
     background-color: rgba(0,0,0,0.5);
     color: white;
     font-weight: bold;
 }
-
+/*Styling to the checkout button very similair to the other buttons*/
 .chkBtn {
     background-color: #009688;
     border: 2px solid #009688;
@@ -143,6 +126,7 @@ body {
     width: 7%;
     margin-left:495px;
 }
+/*Styling to the totalprice in cart site*/
 .totalpricecart {
     background-color: rgba(255,255,255.0,36);
     border: 2px solid rgba(0,0,0,0.75);
@@ -210,11 +194,6 @@ body {
     color: #fff;
     font-size: 18px;
 }
-.grid-container ul li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}
 .contact-container {
     color: #fff;
     width: 100%;
@@ -226,4 +205,23 @@ body {
     font-weight: bold;
     font-size: 18px;
 }
+.one {
+    width: 55%;
+    height: 210px;
+    float:left;
+}
 
+.two {
+    margin-left: 55%;
+    height: 210px;
+}
+.contact-info {
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    padding: 5px;
+}
+.CheckoutPayment
+{
+
+}
