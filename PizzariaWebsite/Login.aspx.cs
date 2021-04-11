@@ -25,8 +25,16 @@ namespace PizzariaWebsite
             // Calls the instance named lm, and adds the IsLoginValid method, along with the parameteres and checks if their values are true.
             if (lm.IsLoginValid(username.Value, password.Value) == true)
             {
-                Session["Username"] = username.Value;
-                Response.Redirect("Default.aspx");
+                if (username.Value == "admin")
+                {
+                    Session["Admin"] = username.Value;
+                    Response.Redirect("Admin.aspx");
+                }
+                else
+                {
+                    Session["Username"] = username.Value;
+                    Response.Redirect("Default.aspx");
+                }
             }
             else
             {

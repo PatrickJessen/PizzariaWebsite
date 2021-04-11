@@ -19,18 +19,6 @@ namespace PizzariaWebsite
             return pizzaList;
         }
 
-        public Pizza GetPizza(int id)
-        {
-            for (int i = 0; i < pizzaList.Count; i++)
-            {
-                if (i == id)
-                {
-                    return pizzaList[i];
-                }
-            }
-            return null;
-        }
-
         public void CalculateQuantity(List<Pizza> pizzalist, int pID, decimal pPrice, string pName)
         {
             for (int i = 0; i < pizzalist.Count; i++)

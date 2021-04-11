@@ -176,21 +176,21 @@ namespace PizzariaWebsite
 
         public List<Order> GetOrders()
         {
-                List<Order> orders = new List<Order>();
-                string query = $"SELECT * FROM Orders";
-                using (SqlConnection connection = new SqlConnection(conString))
+            List<Order> orders = new List<Order>();
+            string query = $"SELECT * FROM Orders";
+            using (SqlConnection connection = new SqlConnection(conString))
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    connection.Open();
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand(query, connection);
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    adapter.Fill(dt);
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        orders.Add(new Order(Convert.ToInt32(dt.Rows[i]["OrderID"]), dt.Rows[i]["Username"].ToString(), Convert.ToDateTime(dt.Rows[i]["OrderDateTime"]), Convert.ToInt32(dt.Rows[i]["PizzaID"]), Convert.ToInt32(dt.Rows[i]["Quantity"]), Convert.ToInt32(dt.Rows[i]["DeliveryTime"])));
-                    }
-                    return orders;
+                    orders.Add(new Order(Convert.ToInt32(dt.Rows[i]["OrderID"]), dt.Rows[i]["Username"].ToString(), Convert.ToDateTime(dt.Rows[i]["OrderDateTime"]), Convert.ToInt32(dt.Rows[i]["PizzaID"]), Convert.ToInt32(dt.Rows[i]["Quantity"]), Convert.ToInt32(dt.Rows[i]["DeliveryTime"])));
                 }
+                return orders;
+            }
         }
     }
 }
