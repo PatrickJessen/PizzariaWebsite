@@ -12,6 +12,7 @@ namespace PizzariaWebsite
     public partial class Admin : System.Web.UI.Page
     {
         OrderManager manager = new OrderManager();
+        PizzaManager pizzaManager = new PizzaManager();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -57,6 +58,16 @@ namespace PizzariaWebsite
         protected void Delivered_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void AddPizza_Click(object sender, EventArgs e)
+        {
+            pizzaManager.InsertPizza(new Pizza(pizzaName.Text, Convert.ToDecimal(pizzaPrice.Text)));
+        }
+
+        protected void DeletePizza_Click(object sender, EventArgs e)
+        {
+            pizzaManager.DeletePizza(delPizza.Text);
         }
     }
 }

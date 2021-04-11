@@ -31,12 +31,17 @@
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox1" runat="server" Text="" placeholder="Change Delivery time"></asp:TextBox>
                                     <asp:Button ID="UpdateBtn" CssClass="delBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click"/>
-                                    <asp:Button ID="Delivered" CssClass="delBtn" runat="server" Text="Update" OnClick="Delivered_Click"/>
                                 </ItemTemplate>
                             </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>
+        <asp:TextBox ID="pizzaName" runat="server" placeholder="Pizza name"></asp:TextBox>
+        <asp:TextBox ID="pizzaPrice" runat="server" placeholder="Pizza price"></asp:TextBox>
+        <asp:Button ID="AddPizza" runat="server" Text="ADD" OnClick="AddPizza_Click" />
+        <p></p>
+        <asp:TextBox ID="delPizza" runat="server" placeholder="Pizza name to delete"></asp:TextBox>
+        <asp:Button ID="DeletePizza" runat="server" Text="Delete" OnClick="DeletePizza_Click" />
   </form>
 </body>
 </html>

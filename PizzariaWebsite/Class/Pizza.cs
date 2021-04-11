@@ -28,5 +28,11 @@ namespace PizzariaWebsite
             Name = name;
             Price = price;
         }
+
+        public Pizza(string name, decimal price)
+        {
+            Name = name;
+            Price = price;
+        }
     }
 }

@@ -192,5 +192,29 @@ namespace PizzariaWebsite
                 return orders;
             }
         }
+
+        public void InsertPizza(Pizza pizza)
+        {
+            string query = "INSERT INTO Pizza (Name, Price) VALUES (@Name, @Price)";
+            using (SqlConnection connection = new SqlConnection(conString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Name", pizza.Name);
+                cmd.Parameters.AddWithValue("@Price", pizza.Price);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void DeletePizza(string name)
+        {
+            string query = $"DELETE FROM Pizza WHERE Name = '{name}'";
+            using (SqlConnection connection = new SqlConnection(conString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

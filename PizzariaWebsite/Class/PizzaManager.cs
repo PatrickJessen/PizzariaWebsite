@@ -19,6 +19,16 @@ namespace PizzariaWebsite
             return pizzaList;
         }
 
+        public void InsertPizza(Pizza pizza)
+        {
+            manager.InsertPizza(pizza);
+        }
+
+        public void DeletePizza(string name)
+        {
+            manager.DeletePizza(name);
+        }
+
         public void CalculateQuantity(List<Pizza> pizzalist, int pID, decimal pPrice, string pName)
         {
             for (int i = 0; i < pizzalist.Count; i++)
