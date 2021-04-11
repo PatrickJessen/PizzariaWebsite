@@ -137,6 +137,7 @@ body {
     padding-right: 5px;
     margin-left: 495px;
 }
+/*position the login div*/
 .login-box {
     width: 280px;
     position: absolute;
@@ -145,6 +146,7 @@ body {
     transform: translate(-50%, -50%);
     color: #fff;
 }
+/*Made the h1 look better*/
 .login-box h1
 {
     float: left;
@@ -154,11 +156,13 @@ body {
     padding:13px 0;
 
 }
+/*Style the img */
 .login-box img {
  width: 45%;
  height: 45%;
  float: right;
 }
+/*Style the div textbox with postion*/
 .textbox
 {
     width: 100%;
@@ -168,6 +172,7 @@ body {
     margin: 8px 0;
     border-bottom: 1px solid #fff;
 }
+/*styling the imput from the user*/
 .textbox input
 {
     border: none;
@@ -176,6 +181,7 @@ body {
     color: #fff;
     font-size: 18px;
 }
+/*Style the a tag so it looks more cool*/
     .textbox a {
         text-decoration: none !important;
         color: #009688;
@@ -185,43 +191,71 @@ body {
             text-decoration:none !important;
             cursor: pointer;
         }
-
-#LoginButton
-{
+/*Login button styled with "transparent" background*/
+#LoginButton {
     width: 100%;
-    background: none;
+    background: #009688;
     border: 2px solid #fff;
     color: #fff;
     font-size: 18px;
 }
+/*Position the contact div*/
 .contact-container {
     color: #fff;
     width: 100%;
 }
+/*Made the h1 tags center so its not on the left*/
 .contact-container h1 {
     text-align: center;
 }
+/*Font changes to the employeetext*/
 .employeetxt {
     font-weight: bold;
     font-size: 18px;
 }
-.one {
+/*Position the div so that the 2 divs are next to one another*/
+.contact-opening {
     width: 55%;
     height: 210px;
-    float:left;
+    float: left;
 }
-
-.two {
+/*Postion this to div to contact-opening so they are side by side*/
+.contacts {
     margin-left: 55%;
     height: 210px;
 }
+/*Style the contact info div, so both contacts and contact-opening fit inside*/
 .contact-info {
     width: 80%;
     height: 200px;
     margin: auto;
     padding: 5px;
 }
+/*Style the text input*/
+.CheckoutText {
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+}
+/*Styled the label text to its white and more font size*/
+.CheckoutPayment label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+/*Added styling to the button so its the same colour as the other buttons and width*/
+.Checkoutbutton {
+    width: 20%;
+    background: #009688;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 18px;
+}
+/*The div is moved to the center*/
 .CheckoutPayment
 {
-
+    margin-left: 810px;
 }
+
+
