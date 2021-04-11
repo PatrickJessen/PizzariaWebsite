@@ -13,32 +13,25 @@ namespace PizzariaWebsite
         LoginManager lm = new LoginManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Checks if Session is not null, if so. Executes code inside if statment.
             if (Session["Username"] != null)
             {
-                LoginPage.InnerText = "Logout";
+                Session.Abandon();
             }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            // Checks if the innertext of LoginPage is Logout, if so. It logs the user out.
-            if (LoginPage.InnerText == "Logout")
+            // Calls the instance named lm, and adds the IsLoginValid method, along with the parameteres and checks if their values are true.
+            if (lm.IsLoginValid(username.Value, password.Value) == true)
             {
-                Session["Username"] = null;
-                Response.Redirect("Login.aspx");
+                Session["Username"] = username.Value;
+                Response.Redirect("Contact.aspx");
             }
             else
             {
-                if (lm.IsLoginValid(username.Value, password.Value) == true)
-                {
-                    Session["Username"] = username.Value;
-                    Response.Redirect("MyPage.aspx");
-                }
-                else
-                {
-                    failText.Text = "Login Failed!";
-                    //giv en fejlmeddelse
-                }
+                // Gives an Error message, if login failed.
+                failText.Text = "Login Failed!";
             }
         }
     }
