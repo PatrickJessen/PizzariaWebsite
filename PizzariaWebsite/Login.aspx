@@ -47,10 +47,6 @@
             </label>
 
             <a href="Registration.aspx">&emsp;&emsp;&nbsp;<b>Register</b></a>
-
-            <p></p>
-
-            <span class="psw">Forgot <a href="">Click here</a></span>
           </div>
       </div>
   </form>
