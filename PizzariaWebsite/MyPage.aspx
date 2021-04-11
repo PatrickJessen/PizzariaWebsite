@@ -23,6 +23,18 @@
                 <li><a href="Contact.Aspx">Contact</a></li>
             </ul>
         </div>
+        <div class="Mypage-container">
+            <div class="Mypage-content">
+                <h3 style="color:#fff; text-align:center;">This is Mypage here you can see all your information and order history</h3>
+                <img src="assets/AvatarLogin.png" />
+                <p>FirstName: <asp:Label ID="MypageFirstName" runat="server" /></p>
+                <p>LastName: <asp:Label ID="MyPageLastName" runat="server" /></p>
+                
+                <p>Phone number: <asp:Label ID="MyPageNumber" runat="server" /></p>
+                
+                <p>Adress: <asp:Label ID="MyPageAdresse" runat="server" /></p>
+            </div>
+        </div>
   </form>
 </body>
 </html>

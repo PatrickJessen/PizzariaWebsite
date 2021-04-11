@@ -257,5 +257,18 @@ body {
 {
     margin-left: 810px;
 }
+.Mypage-content p
+{
+    margin-top: 70px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.Mypage-content img
+{
+    float:right;
+    width: 20%;
+    height: 20%;
+}
 
 
