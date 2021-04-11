@@ -27,5 +27,10 @@ namespace PizzariaWebsite
             }
             return false;
         }
+
+        public List<User> GetUserInfo(string uname)
+        {
+            return manager.GetUserInfo(uname);
+        }
     }
 }
