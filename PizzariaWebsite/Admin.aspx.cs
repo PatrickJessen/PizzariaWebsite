@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Media;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -43,6 +44,20 @@ namespace PizzariaWebsite
         protected void UpdateBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void grid_RowUpdated(object sender, GridViewUpdatedEventArgs e)
+        {
+            SoundPlayer sound = new SoundPlayer();
+            sound.SoundLocation = @"C:\Users\patri\OneDrive\Skrivebord\sound\Alert.wav";
+            sound.Play();
+        }
+
+        protected void testsound_Click(object sender, EventArgs e)
+        {
+            SoundPlayer sound = new SoundPlayer();
+            sound.SoundLocation = @"C:\Users\patri\OneDrive\Skrivebord\sound\Alert.wav";
+            sound.Play();
         }
     }
 }

@@ -30,5 +30,30 @@ namespace PizzariaWebsite
             }
             return null;
         }
+
+        public void CalculateQuantity(List<Pizza> pizzalist, int pID, decimal pPrice, string pName)
+        {
+            for (int i = 0; i < pizzalist.Count; i++)
+            {
+                //check if we already have the same pizza in the list
+                if (pizzalist[i].Id == pID)
+                {
+                    //add to quantity if theres added the same pizza multiple times
+                    pizzalist[i].Quantity++;
+                    //calculates the price
+                    pizzalist[i].Price += pPrice;
+                    //break the loop cause we only need to do this once
+                    break;
+                }
+                //check if we're at the end of the loop
+                else if (i == pizzalist.Count - 1)
+                {
+                    //add new pizza to the list if theres none already matching
+                    pizzalist.Add(new Pizza(pID, pName, pPrice, 1, pPrice));
+                    //break the loop otherwise it adds +1 to quantity
+                    break;
+                }
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace PizzariaWebsite
         {
             if (Session["Username"] != null)
             {
-                LoginPage.InnerText = "Logout";
+                Session["Username"] = null;
             }
         }
 
