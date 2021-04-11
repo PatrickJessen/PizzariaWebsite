@@ -27,16 +27,14 @@
             </ul>
         </div>
       <div class="CheckoutPayment">
-          <label>Credit card number</label>
-          <asp:TextBox ID="cardNumber" runat="server" TextMode="Number" ></asp:TextBox>
-      <p>
-          <label>Expire date<asp:TextBox ID="cardExpire" runat="server" ></asp:TextBox>
-          </label>
-      </p>
-      <p>
-          <label>CVV code</label><asp:TextBox ID="cardCVV" runat="server" TextMode="Number" ></asp:TextBox>
-      </p>
-      <asp:Button ID="BuyPizza" runat="server" Text="Buy" OnClick="BuyPizza_Click"/>
+          <label>Credit card number</label> <br />
+          <asp:TextBox CssClass="CheckoutText" ID="cardNumber" runat="server" TextMode="Number" ></asp:TextBox> <br />
+            
+          <label>Expire date</label> <br />
+          <asp:TextBox CssClass="CheckoutText" ID="cardExpire" runat="server" ></asp:TextBox> <br /> 
+          <label>CVV code</label><br />
+          <asp:TextBox CssClass="CheckoutText" ID="cardCVV" runat="server" TextMode="Number" ></asp:TextBox> <br />
+      <asp:Button CssClass="Checkoutbutton" ID="BuyPizza" runat="server" Text="Buy" OnClick="BuyPizza_Click"/>
       </div>
   </form>
 </body>

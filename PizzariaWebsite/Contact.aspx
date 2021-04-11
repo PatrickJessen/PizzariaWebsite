@@ -28,9 +28,9 @@
                 <h1>About Us</h1>
 
                 <p>
-                    Vi startede denne italienske restaurant Marts 2021 med et mål om at kunne levere de bedste pizzaer rundt til folket.
-                Indtil videre har vi haft stor succes. Det er muligt for kunderne at bestille mad direkte fra vores hjemmesiden, hvorefter vi kan udbringe maden eller de kan komme og hente maden selv.
-                Vi har en ambition om at kunne udvikle og gøre vores forretning større.
+                    We started this Italian restaurant in March 2021 with a goal of being able to deliver the best pizzas around to the people..
+               So far we have had great success.. It is possible for customers to order food directly from our website, after which we can deliver the food or they can come and pick up the food themselves.
+                We have an ambition to be able to develop and make our business bigger.
                 </p>
 
                 <h1>Employee of the month</h1>
@@ -41,7 +41,7 @@
             </div>
             <h1>Contact Us</h1>
             <div class="contact-info">
-                <div class="one">
+                <div class="contact-opening">
                     <h3>Opening times</h3>
                     <ul>
                         <li>Mandag: 12:00 - 20:00</li>
@@ -53,7 +53,7 @@
                         <li>Søndag: 13:00 - 21:00</li>
                     </ul>
                 </div>
-                <div class="two">
+                <div class="contacts">
                     <h3>Contact Information</h3>
                     <ul>
                         <li>Email: Gruppe3Pizza@test.dk</li>
