@@ -25,7 +25,7 @@
         </div>
         <div class="Mypage-container">
             <div class="Mypage-content">
-                <h3 style="color:#fff; text-align:center;">This is Mypage here you can see all your information and order history</h3>
+                <h3 style="color:#fff; text-align:center;">This is Mypage here you can see all your information</h3>
                 <asp:Image ImageUrl="assets/AvatarLogin.png" ID="avatarLoginImg" runat="server" Visible="false" />
                 <p>FirstName: <asp:Label ID="MypageFirstName" runat="server" Visible="false" /></p>
                 <p>LastName: <asp:Label ID="MyPageLastName" runat="server" Visible="false" /></p>
