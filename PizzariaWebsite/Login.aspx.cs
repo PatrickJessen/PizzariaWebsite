@@ -26,7 +26,7 @@ namespace PizzariaWebsite
             if (lm.IsLoginValid(username.Value, password.Value) == true)
             {
                 Session["Username"] = username.Value;
-                Response.Redirect("Contact.aspx");
+                Response.Redirect("Default.aspx");
             }
             else
             {
